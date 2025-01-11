@@ -1,3 +1,6 @@
 #root{
-  background: linear-gradient(30deg, #000000, darkgray, #000000);
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
