@@ -24,14 +24,17 @@ const Response = () => {
   }, []);
 
   return (
-    <div className="form-area">
+    <div className="response-form-area">
       <h3>Saved Data:</h3>
       {error && <p className="error">Error: {error}</p>}
       <ul>
         {data.map((item, index) => (
           <li key={index}>
             <strong>Name:</strong> {item.name} <br />
-            <strong>Email:</strong> {item.email}
+            <strong>Email:</strong> {item.email} <br />
+            <strong>Data:</strong> {item.date} <br />
+            <strong>Tel:</strong> {item.phone} <br />
+            <strong>Prowadzący:</strong> {item.license} <br />
           </li>
         ))}
       </ul>

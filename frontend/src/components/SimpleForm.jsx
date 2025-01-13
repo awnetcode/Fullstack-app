@@ -2,12 +2,17 @@ import React from 'react';
 
 import '../styles/SimpleForm.css';
 
+import Button from './items/Button';
+
 class SimpleForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       name: '',
-      email: ''
+      email: '',
+      date: '',
+      phone: '',
+      license: ''
     };
   }
 
@@ -42,22 +47,33 @@ class SimpleForm extends React.Component {
     return (
       <div className='form-area'>
         <form className='application-form'>
+            <input type="date" className='date-input' name='date' onChange={this.handleInputChange}/>
           <label>
-            Name:
+            Imię:
             <input className='text-input' type="text" name="name" onChange={this.handleInputChange} />
           </label>
-          <br />
           <label>
             Email:
             <input className='text-input' type="text" name="email" onChange={this.handleInputChange} />
           </label>
+          <label>
+            Tel:
+            <input className='text-input' type="text" name="phone" onChange={this.handleInputChange} />
+          </label>
+          <label>
+            Nr prowadzącego:
+            <input className='text-input license' type="text" name="license" onChange={this.handleInputChange} />
+          </label>
         </form>
-        <div>
+        <div className='result-area'>
           <h2>Your Input:</h2>
-          <p>Name: {this.state.name}</p>
+          <p>Imię: {this.state.name}</p>
           <p>Email: {this.state.email}</p>
+          <p>Data: {this.state.date}</p>
+          <p>Tel: {this.state.phone}</p>
+          <p>Nr legitymacji: {this.state.license}</p>
         </div>
-        <button onClick={this.saveToServer}>Save to JSON on Server</button>
+        <Button action={this.saveToServer} content={'Save to JSON'}/>
       </div>
     );
   }
